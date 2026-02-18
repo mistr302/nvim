@@ -35,18 +35,23 @@
           }).neovim;
       };
       nixosModules.default =
-        { config, ... }:
         {
-          modules = [
-            inputs.nvf.nixosModules.default
-          ];
-          options = {
+          config,
+          lib,
+          pkgs,
+          ...
+        }:
+        {
+          options = { };
+          config = {
+            modules = [
+              inputs.nvf.nixosModules.default
+            ];
             programs.nvf = {
               enable = true;
               settings = cfg;
             };
           };
-          config = { };
         };
     };
 }
