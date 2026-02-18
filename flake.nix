@@ -16,6 +16,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      cfg = (import ./nvimconf.nix) nixpkgs.lib;
     in
     {
       packages.${system} = {
@@ -27,9 +28,22 @@
           (inputs.nvf.lib.neovimConfiguration {
             inherit pkgs;
             modules = [
-              ./nvimconf.nix
+              {
+                config = cfg;
+              }
             ];
           }).neovim;
       };
+      nixosModules.default =
+        { config, ... }:
+        {
+          options = {
+            programs.nvf = {
+              enable = true;
+              settings = cfg;
+            };
+          };
+          config = { };
+        };
     };
 }

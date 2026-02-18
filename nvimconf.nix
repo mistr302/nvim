@@ -1,11 +1,7 @@
-{
-  lib,
-  ...
-}:
-{
+lib: {
   # TODO: modularize
   # configure dashboard
-  config.vim = {
+  vim = {
     theme = {
       enable = true;
       name = "dracula";
