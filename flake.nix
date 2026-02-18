@@ -37,6 +37,9 @@
       nixosModules.default =
         { config, ... }:
         {
+          modules = [
+            inputs.nvf.nixosModules.default
+          ];
           options = {
             programs.nvf = {
               enable = true;
