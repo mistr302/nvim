@@ -126,6 +126,8 @@ lib: {
       --  Shift+Tab to unindent
       vim.keymap.set("x", "<S-Tab>", "<gv")
       vim.keymap.set("i", "<S-Tab>", "<C-D>")
+
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition)
     '';
 
     git = {
