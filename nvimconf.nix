@@ -26,6 +26,9 @@ lib: {
       inlayHints.enable = true;
       formatOnSave = true;
       trouble.enable = true;
+      mappings = {
+        goToDefinition = "gd";
+      };
     };
     languages = {
       enableTreesitter = true;
@@ -127,7 +130,6 @@ lib: {
       vim.keymap.set("x", "<S-Tab>", "<gv")
       vim.keymap.set("i", "<S-Tab>", "<C-D>")
 
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition)
     '';
 
     git = {
