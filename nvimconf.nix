@@ -72,7 +72,8 @@ lib: {
     telescope = {
       enable = true;
       mappings = {
-        liveGrep = "g";
+        liveGrep = "fg";
+        findFiles = "ff";
       };
     };
     filetree.neo-tree = {
