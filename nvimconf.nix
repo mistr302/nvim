@@ -28,9 +28,9 @@ lib: {
       registers = "unnamedplus";
     };
     options = {
-      tabstop = 4; # Width of tab character
-      shiftwidth = 4; # Size of indentation
-      softtabstop = 4; # Spaces inserted when pressing <Tab>
+      tabstop = 2; # Width of tab character
+      shiftwidth = 2; # Size of indentation
+      softtabstop = 2; # Spaces inserted when pressing <Tab>
       expandtab = true; # Convert tabs to spaces
     };
     # lsp settings
