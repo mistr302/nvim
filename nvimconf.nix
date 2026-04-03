@@ -2,6 +2,19 @@ lib: {
   # TODO: modularize
   # configure dashboard
   vim = {
+    # test if i like this; automatically inserts closing brackets
+    autopairs.nvim-autopairs.enable = true;
+    dashboard.alpha = {
+      enable = true;
+      # list of attribute set of anything
+      layout = [ ]; # TODO
+      # opts = [ ];
+
+    };
+    mini.surround = {
+      enable = true;
+    };
+    utility.multicursors.enable = true;
     theme = {
       enable = true;
       name = "dracula";
@@ -56,7 +69,12 @@ lib: {
       };
     };
     # Fuzzy‑finder & filetree
-    telescope.enable = true;
+    telescope = {
+      enable = true;
+      mappings = {
+        liveGrep = "g";
+      };
+    };
     filetree.neo-tree = {
       enable = true;
       setupOpts = {
